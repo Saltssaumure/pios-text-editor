@@ -1,0 +1,178 @@
+@font-face {
+    font-family: "PerfectDOS";
+    src: url("https://static.tumblr.com/6nmlfta/kInq29swf/perfect_dos_vga_437_win.ttf")
+}
+
+body
+{
+    position: relative;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        background: black;
+        color: white;
+        font-family: "PerfectDOS", Consolas, monospace;
+        font-size: 36px;
+        letter-spacing: -2px;
+    /* defining some epic colours */
+    --dullRed: rgb(120,0,22);
+    --brightRed: rgb(180,0,22);
+    --greyColour: rgb(150,150,150);
+    --redGlow: 0 0 10px var(--brightRed), 0 0 30px var(--brightRed), 0 0 40px var(--brightRed);
+    --whiteGlow: 0 0 10px rgba(0,170,255,0.5), 0 0 10px white, 0 0 2px white;
+}
+
+div#ok
+{
+    position: absolute;
+    top: 30px;
+    margin: auto;
+    border: solid var(--greyColour);
+    border-width: 3px 5px;
+    width: 80vw;
+    padding-top: 20px;
+    height: 90vh;
+    overflow-y: auto;
+}
+
+div.title
+{
+    position: fixed!important;
+
+    top: 18px!important;
+    text-shadow: var(--whiteGlow);
+    overflow: hidden;
+}
+
+/* halp */
+
+p.help
+{
+    position: fixed;
+    color: white;
+    left: 20px;
+    bottom: 10px;
+    margin: 0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+div#helpful
+{
+    position: fixed;
+    left: 60px;
+    bottom: 10px;
+    width: 600px;
+    max-width: 80vw;
+    padding: 0 20px;
+    z-index: 10;
+    background: black;
+    border: solid var(--greyColour);
+    border-width: 3px 5px;
+}
+
+div#helpful ul
+{
+    list-style-type: square;
+}
+
+div#helpful>p
+{
+    text-shadow:var(--whiteGlow);
+    text-align: center;
+}
+
+div#helpful a
+{
+    color: white;
+}
+
+/* each chat box */
+div.chat
+{
+    position: relative;
+    margin: 34px auto;
+    width: 70%;
+    max-width: 800px;
+}
+
+/* name at top of chat */
+div.name
+{
+    position: absolute;
+    top: -12px;
+    padding: 0 200px 0 35px; /* makes it easier to click*/
+    max-width: 700px;
+    max-height: 36px;
+    z-index: 1;
+        background: black;
+        background-clip: content-box;
+}
+
+/* frame of chat box */
+div.frame
+{
+    border-style: solid;
+    border-width: 3px 5px;
+    padding-top: 22px; /*gives name its own clickable space*/
+}
+
+/* chat box, editable */
+div.text
+{
+    position: relative;
+    z-index: 2; /*this makes the glow overlap the name box*/
+    padding: 0 30px 22px 30px; /*gives name its own clickable space*/
+}
+
+/* gets rid of outline on chat/name box, so that if you wanna record typing it doesn't get in the way */
+div.text:focus,
+div.name:focus
+{
+    outline: none;
+}
+
+/*-- styles specific to normal users (white text) --*/
+
+.kazz div.name
+{
+    color: var(--greyColour);
+}
+
+.kazz div.frame
+{
+    border-color: var(--greyColour);
+    color: white;
+    text-shadow: var(--whiteGlow);
+}
+
+/*-- styles specific to system users (red text) --*/
+
+.system
+{
+    text-transform: uppercase;
+}
+
+.system div.name
+{
+    color: var(--dullRed);
+}
+
+.system div.frame
+{
+    border-color: var(--dullRed);  
+}
+
+.system div.text
+{
+    color: var(--brightRed);  
+    text-shadow: var(--redGlow);
+}
+
+/*-- scrollbar be gone --*/
+::-webkit-scrollbar
+{
+    display: none;
+}
