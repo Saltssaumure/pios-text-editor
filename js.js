@@ -17,13 +17,18 @@ function hideX() {
     var xes = document.getElementsByClassName("remove");
     var button = document.getElementById("hidex");
     var display;
-    if (xes[0].style.display === "block") {
-        display = "none";
-        button.innerHTML = "o";
+    try {
+        if (xes[0].style.display === "block") {
+            display = "none";
+            button.innerHTML = "o";
+        }
+        else {
+            display = "block";
+            button.innerHTML = "-";
+        }
     }
-    else {
-        display = "block";
-        button.innerHTML = "-";
+    catch(error) {
+        // suppress typeerror when there are no xes
     }
     for (var i = 0; i < xes.length; i++) {
         xes[i].style.display = display;
@@ -47,6 +52,7 @@ function addbox(user, side) {
     
     var remover = document.createElement("div");
     remover.className = "remove";
+    remover.style.display = "block";
     remover.innerHTML = "x";
     remover.onclick = removebox;
 
@@ -65,6 +71,5 @@ function save() {
     a.hidden = true;
     document.body.appendChild(a);
     a.click();
-    alert("Downloaded HTML with your text.\nSave CSS manually to view in piOS style.");
+    alert("Downloaded HTML with your conversation.\nSave CSS manually to view in piOS style.");
 }
-

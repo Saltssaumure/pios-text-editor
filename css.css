@@ -130,6 +130,16 @@ div.chat
         display: none; /* hide original boxes, copies will have id stripped so this does not apply */
     }
 
+/* x to remove chat box */
+.remove 
+{
+    position: absolute;
+    left: -25px;
+    top: -3px;
+    text-transform: none;
+    cursor: pointer;
+}
+
 /* name at top of chat */
 div.name
 {
@@ -208,7 +218,13 @@ div.name:focus
 }
 
 /*-- scrollbar be gone --*/
-::-webkit-scrollbar
+.container::-webkit-scrollbar
 {
     display: none;
 }
+.container 
+{
+    ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
