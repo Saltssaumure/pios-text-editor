@@ -33,8 +33,9 @@
     <div class="options left">
         <p class="addkazz" onclick="addbox('kazz','left')">+</p>
         <p class="addsystem" onclick="addbox('system','left')">+</p>
+        <p id="hidex" onclick="hideX()">o</p>
         <p id="help" onclick="help()">?</p>
-        <p id="hidex">o</p>
+        
     </div>
     
     <div class="options right">
@@ -45,12 +46,19 @@
     </div>
     
     <div id="helpful">
-        <p>Tips</p>
+        <p>Help</p>
         <ul>
-            <li>The editor title and chat box names can be changed.</li>
-            <li>Use the "+" buttons to add new boxes to the bottom of the page. You may need to scroll down to see them.</li>
+            <li>The editor title is editable.</li>
+            <li>Names can be typed on the top line of the chat boxes.</li>
             <li>Use the "x" button underneath a chat box to close that box. Chat boxes cannot be recovered once closed!</li>
-            <li>Save an HTML copy of your chat log using the "S" button. Also download the CSS into the same folder by pressing "C" to view it in this style.</li>
+        </ul>
+        <p>Sidebars</p>
+        <ul>
+            <li><b>+</b> : Add chat boxes to the bottom of the page. You may need to scroll down to see them.</li>
+            <li><b>o</b> : Hide/unhide <b>x</b> buttons which remove chat boxes.</li>
+            <li><b>?</b> : Open this help menu.</li>
+            <li><b>S</b> : Save an HTML copy of your chat log.</li>
+            <li><b>C</b> : Download the CSS to view saved chat logs in the piOS style. Place this in the same folder as the HTML files.</li>
         </ul>
         <p>Got complaints? :^)</p>
         <ul>
