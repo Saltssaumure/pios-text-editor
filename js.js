@@ -9,7 +9,24 @@ function help() {
     }
     else {
         helpful.style.display = "block";
-        button.innerHTML = "x";
+        button.innerHTML = "-";
+    }
+}
+
+function hideX() {
+    var xes = document.getElementsByClassName("remove");
+    var button = document.getElementById("hidex");
+    var display;
+    if (xes[0].style.display === "block") {
+        display = "none";
+        button.innerHTML = "o";
+    }
+    else {
+        display = "block";
+        button.innerHTML = "-";
+    }
+    for (var i = 0; i < xes.length; i++) {
+        xes[i].style.display = display;
     }
 }
 
@@ -48,6 +65,6 @@ function save() {
     a.hidden = true;
     document.body.appendChild(a);
     a.click();
-    alert("Downloaded HTML with your text.\nSave CSS manually to view in piOS style. Auto-download for CSS to be added later!");
+    alert("Downloaded HTML with your text.\nSave CSS manually to view in piOS style.");
 }
 
