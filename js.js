@@ -1,12 +1,15 @@
 /* eslint-env browser */
 
 function help() {
-    var ok = document.getElementById("helpful");
-    if (ok.style.display === "block") {
-        ok.style.display = "none";
+    var helpful = document.getElementById("helpful");
+    var button = document.getElementById("help");
+    if (helpful.style.display === "block") {
+        helpful.style.display = "none";
+        button.innerHTML = "?";
     }
     else {
-        ok.style.display = "block";
+        helpful.style.display = "block";
+        button.innerHTML = "x";
     }
 }
 
