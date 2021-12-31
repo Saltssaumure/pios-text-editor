@@ -3,7 +3,7 @@
 <html lang="en">
     
 <head>
-    <title>piOS text box</title>
+    <title>piOS Text Editor</title>
     <link rel="stylesheet" href="css.css">
     <link rel="icon" type="image/png" href="okicon.png">
     <script src="js.js"></script>
@@ -11,17 +11,17 @@
 
 <body>
     
-    <div id="ok">
+    <div id="container">
         <div class="title name" contenteditable="true" spellcheck="false">Saltssaumure's piOS Text Editor</div>
     
-        <div class="kazz chat">
+        <div class="kazz chat" id="kazz">
             <div class="name" contenteditable="true" spellcheck="false"></div>
             <div class="frame">
                 <div class="text" contenteditable="true" spellcheck="false"></div>
             </div>
         </div>
 
-        <div class="system chat">
+        <div class="system chat" id="system">
             <div class="name" contenteditable="true" spellcheck="false"></div>
             <div class="frame">
                 <div class="text" contenteditable="true" spellcheck="false"></div>
@@ -30,23 +30,32 @@
     
     </div>
     
-    <p class="help" onclick="help()">?</p>
+    <div class="options left">
+        <p class="addkazz" onclick="addbox('kazz','left')">+</p>
+        <p class="addsystem" onclick="addbox('system','left')">+</p>
+        <p class="help" onclick="help()">?</p>
+    </div>
+    
+    <div class="options right">
+        <p class="addkazz" onclick="addbox('kazz','right')">+</p>
+        <p class="addsystem" onclick="addbox('system','right')">+</p>
+        <p class="save" onclick="save()">S</p>
+        <p class="savecss"><a href="css.css" download>C</a></p>
+    </div>
+    
     <div id="helpful">
         <p>Tips (click "?" again to close)</p>
         <ul>
-            <li>The editor title can be changed.</li>
-            <li>Names can be typed on the top line of each chat box.</li>
-            <li>Chat boxes will expand down as you type. Scroll using your scrollwheel.</li>
-            <li><span style="color: var(--brightRed); text-shadow:var(--redGlow);">RED TEXT</span> is always caps.</li>
+            <li>The editor title and chat box names can be changed.</li>
+            <li>Use the "+" buttons to add new boxes to the bottom of the page. You may need to scroll down to see them.</li>
+            <li>Boxes cannot be recovered once its X is pressed!</li>
+            <li>Save an HTML copy of your chat log using the "S" button. Also download the CSS into the same folder by pressing "C" to view it in this style.</li>
         </ul>
         <p>Got complaints? :^)</p>
         <ul>
+            <li>GitHub: <a href="https://github.com/Saltssaumure/pios-text-editor">pios-text-editor</a></li>
             <li>Discord: Saltssaumure#7557</li>
-            <li>Discord: <a href="https://discord.gg/5YKRrZJ">SUPERHOT Official</a></li>
-            <li>Discord: <a href="https://discord.gg/CzdmdFh">PC Database</a></li>
-            <li>Twitter: <a href="https://twitter.com/Saltssaumure">@Saltssaumure</a></li>
-            <li>Tumblr : <a href="https://saltssamure.tumblr.com">Saltssaumure</a></li>
-
+            <li>Tumblr: <a href="https://saltssamure.tumblr.com">Saltssaumure</a></li>
         </ul>
     </div>
 

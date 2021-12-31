@@ -24,40 +24,56 @@ body
     --whiteGlow: 0 0 10px rgba(0,170,255,0.5), 0 0 10px white, 0 0 2px white;
 }
 
-div#ok
+div#container
 {
-    position: absolute;
+    position: fixed;
     top: 30px;
-    margin: auto;
+    bottom: 30px;
     border: solid var(--greyColour);
     border-width: 3px 5px;
     width: 80vw;
     padding-top: 20px;
-    height: 90vh;
-    overflow-y: auto;
+    overflow-y: auto; 
 }
 
-div.title
+div.name.title
 {
-    position: fixed!important;
-
-    top: 18px!important;
+    position: fixed;
+    top: 18px;
     text-shadow: var(--whiteGlow);
     overflow: hidden;
+    z-index: 2;
 }
 
-/* halp */
+/* options menus */
 
-p.help
+div.options
 {
     position: fixed;
     color: white;
-    left: 20px;
     bottom: 10px;
     margin: 0;
     text-decoration: none;
+}
+    div.options.left
+    {
+        left: 20px;
+    }
+    div.options.right
+    {
+        right: 20px;
+    }
+
+div.options p
+{
     cursor: pointer;
 }
+
+    div.options a
+    {
+        text-decoration: none;
+        color: white;   
+    }
 
 div#helpful
 {
@@ -71,6 +87,8 @@ div#helpful
     background: black;
     border: solid var(--greyColour);
     border-width: 3px 5px;
+    display: none;
+    font-size: 24px;
 }
 
 div#helpful ul
@@ -94,22 +112,39 @@ div.chat
 {
     position: relative;
     margin: 34px auto;
-    width: 70%;
-    max-width: 800px;
+    min-width: 10%;
+    width: fit-content;
+    max-width: 70%;
 }
+    div.chat.left
+    {
+        margin-left: 34px;
+    }
+    div.chat.right
+    {
+        margin-right: 34px;
+    }
+    div.chat#kazz,
+    div.chat#system
+    {
+        display: none; /* hide original boxes, copies will have id stripped so this does not apply */
+    }
 
 /* name at top of chat */
 div.name
 {
-    position: absolute;
-    top: -12px;
-    padding: 0 200px 0 35px; /* makes it easier to click*/
+    padding: 0 200px 0 33px; /* makes it easier to click*/
     max-width: 700px;
     max-height: 36px;
     z-index: 1;
-        background: black;
+        background: linear-gradient(0deg, transparent, black 60%, black 70%, transparent 75%);
         background-clip: content-box;
 }
+    .chat div.name
+    {
+        position: absolute;
+        top: -12px;
+    }
 
 /* frame of chat box */
 div.frame
@@ -165,7 +200,8 @@ div.name:focus
     border-color: var(--dullRed);  
 }
 
-.system div.text
+.system div.text,
+.addsystem
 {
     color: var(--brightRed);  
     text-shadow: var(--redGlow);
